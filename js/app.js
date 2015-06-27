@@ -18,7 +18,7 @@ $(document).ready(function() {
 
             }
             else {
-                playTrack(track[0]);
+                playTrack(tracks[0]);
             }
         });
     }
