@@ -22,6 +22,7 @@ $(document).ready(function() {
     function winit() {
         var qinit = search_list[Math.floor(Math.random()*search_list.length)];
         document.getElementById('sterm').value = qinit;
+        $("#sterm").focus();
         qsearch(qinit);
     }
 
