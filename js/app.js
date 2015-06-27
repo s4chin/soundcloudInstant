@@ -28,6 +28,10 @@ $(document).ready(function() {
                 prev();
             } else if (e.keyCode == 32) {
                 toggle();
+            } else if (e.shiftKey && e.keyCode == 39) {
+                seekFront();
+            } else if (e.shiftKey && e.keyCode == 37) {
+                seekBack();
             }
         }
     });
@@ -98,6 +102,18 @@ $(document).ready(function() {
 
     function toggle() {
         widget.toggle();
+    }
+
+    function seekFront() {
+        widget.getPosition(function(pos) {
+            widget.seekTo(pos + 3000);
+        });
+    }
+
+    function seekBack() {
+        widget.getPosition(function(pos) {
+            widget.seekTo(pos - 3000);
+        });
     }
 
     $('#sterm').keyup(function(e) {
