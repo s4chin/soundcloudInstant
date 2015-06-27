@@ -24,6 +24,10 @@ $(document).ready(function() {
         if (!$("#sterm").is(':focus')) {
             if (e.keyCode == 39) {
                 next();
+            } else if (e.keyCode == 37) {
+                prev();
+            } else if (e.keyCode == 32) {
+                toggle();
             }
         }
     });
@@ -74,6 +78,26 @@ $(document).ready(function() {
         else {
 
         }
+    }
+
+    function prev() {
+        if (track_list.length > 0) {
+            if (index > 0) {
+                index -= 1;
+                playTrack(track_list[index]);
+            }
+            else {
+                index = track_list.length - 1;
+                playTrack(track_list[index]);
+            }
+        }
+        else {
+
+        }
+    }
+
+    function toggle() {
+        widget.toggle();
     }
 
     $('#sterm').keyup(function(e) {
