@@ -19,9 +19,17 @@ $(document).ready(function() {
         });
     });
 
+    $(document).keydown(function(e) {
+        if (!$("#sterm").is(':focus')) {
+            if (e.keyCode == 39) {
+                next();
+            }
+        }
+    });
+
     function winit() {
         var qinit = search_list[Math.floor(Math.random()*search_list.length)];
-        document.getElementById('sterm').value = qinit;
+        $('#sterm').value = qinit;
         $("#sterm").focus();
         qsearch(qinit);
     }
