@@ -22,16 +22,16 @@ $(document).ready(function() {
 
     $(document).keydown(function(e) {
         if (!$("#sterm").is(':focus')) {
-            if (e.keyCode == 39) {
+            if (e.shiftKey && e.keyCode == 39) {
+                seekFront();
+            } else if (e.shiftKey && e.keyCode == 37) {
+                seekBack();
+            } else if (e.keyCode == 39) {
                 next();
             } else if (e.keyCode == 37) {
                 prev();
             } else if (e.keyCode == 32) {
                 toggle();
-            } else if (e.shiftKey && e.keyCode == 39) {
-                seekFront();
-            } else if (e.shiftKey && e.keyCode == 37) {
-                seekBack();
             }
         }
     });
